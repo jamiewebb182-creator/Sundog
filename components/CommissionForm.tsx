@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, type ReactNode } from "react";
+import { useState, useRef, useEffect, type ReactNode } from "react";
 import { orderConfig, orderForm } from "@/lib/content";
 
 type PortfolioOption = { code: string; title: string };
@@ -18,6 +18,17 @@ export function CommissionForm({
   const [errors, setErrors] = useState<string[]>([]);
   const [submitting, setSubmitting] = useState(false);
   const [serverError, setServerError] = useState<string | null>(null);
+  const messageRef = useRef<HTMLDivElement>(null);
+
+  // The submit button sits at the bottom of a long form, but the error/success
+  // message renders near the top — without this, a validation failure (or a
+  // server error) can render entirely off-screen and look like nothing happened.
+  useEffect(() => {
+    if ((errors.length > 0 || serverError || submitted) && messageRef.current) {
+      messageRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+      messageRef.current.focus();
+    }
+  }, [errors, serverError, submitted]);
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -87,7 +98,7 @@ export function CommissionForm({
   if (submitted) {
     return (
       <div>
-        <div className="confirm">
+        <div className="confirm" ref={messageRef} tabIndex={-1}>
           <div className="mark">🪟</div>
           <h2>Thank you &mdash; that&rsquo;s landed with me.</h2>
           <p>
@@ -105,7 +116,7 @@ export function CommissionForm({
   return (
     <div>
       {errors.length > 0 && (
-        <div className="error-summary">
+        <div className="error-summary" ref={messageRef} tabIndex={-1} role="alert">
           <strong>A couple of things first:</strong>
           <ul>
             {errors.map((err, i) => (
@@ -115,7 +126,7 @@ export function CommissionForm({
         </div>
       )}
       {serverError && (
-        <div className="error-summary">
+        <div className="error-summary" ref={messageRef} tabIndex={-1} role="alert">
           <strong>{serverError}</strong>
         </div>
       )}
