@@ -59,6 +59,9 @@ export function CommissionForm({
     }
     if (!name) newErrors.push("Add your name.");
     if (orderConfig.emailRequired && !email) newErrors.push("Add your email address.");
+    if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      newErrors.push("That email address doesn't look right — check it's in the form name@example.com.");
+    }
     if (orderConfig.phoneRequired && !phone) newErrors.push("Add a phone number.");
 
     if (newErrors.length) {
