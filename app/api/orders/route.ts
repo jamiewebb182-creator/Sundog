@@ -26,6 +26,8 @@ function esc(s: string) {
   return s.replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c] as string));
 }
 
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
 export async function POST(request: Request) {
   try {
     const data = await request.formData();
@@ -105,7 +107,11 @@ export async function POST(request: Request) {
           body: JSON.stringify({
             from: "Sundog Stained Glass <onboarding@resend.dev>",
             to: [notifyEmail],
-            reply_to: email || undefined,
+            // Only set reply_to when it's a well-formed address — an invalid
+            // value here would get the whole notification rejected by Resend,
+            // and you'd rather still get notified (there may be a phone
+            // number instead) than miss the enquiry entirely.
+            reply_to: EMAIL_RE.test(email) ? email : undefined,
             subject: `New commission enquiry from ${name}`,
             html,
           }),
