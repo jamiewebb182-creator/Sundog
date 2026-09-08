@@ -72,7 +72,9 @@ export async function POST(request: Request) {
 
     // Best-effort notification — an email failure shouldn't fail the customer's
     // submission, since the order is already safely saved above.
-    if (process.env.RESEND_API_KEY) {
+    if (!process.env.RESEND_API_KEY) {
+      console.error("Order saved, but RESEND_API_KEY is not set — skipping notification email.");
+    } else {
       const rows = [
         ["Name", name],
         ["Email", email || "—"],
@@ -94,7 +96,7 @@ export async function POST(request: Request) {
         linksHtml;
 
       try {
-        await fetch("https://api.resend.com/emails", {
+        const emailRes = await fetch("https://api.resend.com/emails", {
           method: "POST",
           headers: {
             Authorization: `Bearer ${process.env.RESEND_API_KEY}`,
@@ -108,8 +110,14 @@ export async function POST(request: Request) {
             html,
           }),
         });
+        if (!emailRes.ok) {
+          const body = await emailRes.text();
+          console.error(`Order notification email rejected by Resend (status ${emailRes.status}):`, body);
+        } else {
+          console.log("Order notification email sent successfully.");
+        }
       } catch (emailError) {
-        console.error("Order notification email failed:", emailError);
+        console.error("Order notification email failed (network error):", emailError);
       }
     }
 
