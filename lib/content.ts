@@ -13,7 +13,7 @@
 export const site = {
   name: "Sundog Stained Glass",
   tagline: "Bespoke leaded stained glass for your home.",
-  bio: "I design and lead stained glass panels by hand, specialising in traditional Victorian and Edwardian styles as well as contemporary, across Bristol and the South West — front doors, transoms, and window panels built to match your home’s original style, letting coloured light shine.",
+  bio: "Hi, I'm Jamie from Sundog Stained Glass, I design and build stained glass panels by hand, from my home workshop in Bristol. I specialise in traditional Victorian, Edwardian and contemporary styles, and work across Bristol and the South West - front doors and window panels built to match your home’s original style, letting coloured light shine.",
 
   // Hero image, top right of the homepage. Leave as `null` to show the
   // generated glass artwork (like the prototype); to use a real photo
@@ -22,39 +22,38 @@ export const site = {
   heroCaption: "A recent panel, held up to the light.",
 
   galleryIntro:
-    "A few pieces mid-build — most panels take three to five weeks from first sketch to fitting.",
+    "A images of the build process - most panels take two to four weeks from first sketch to fitting.",
 
   portfolioBlurb: "Finished panels with rough pricing, so you’ve a sense of scale before we speak.",
-  orderBlurb: "Tell me about your window and I’ll come back with an estimate — no need to know every detail yet.",
+  orderBlurb: "Tell me about your window and I’ll come back with an estimate - no need to know every detail yet.",
 
-  contactIntro: "Based in Bristol, working on doors and windows across the South West. Email is best.",
-  email: "hello@sundogstainedglass.co.uk",
-  phone: "0117 496 0271",
-  location: "Bristol, UK",
+  contactIntro: "Based in Bristol, working on doors and windows across the South West. Whatsapp or Email is preferred.",
+  email: "jamie.webb182@gmail.com",
+  phone: "07752373965",
+  location: "Brislongton, Bristol, UK",
   instagram: "@sundogstainedglass",
 
-  portfolioIntro: "Every piece below is hand-cut and leaded to order — prices are a rough guide and depend on size and glass.",
-  orderIntro: "Fill in what you can below. Nothing here is final — it just gives me enough to send a first estimate.",
+  portfolioIntro: "Every piece below is hand-cut and leaded to order - prices are a rough guide and depend on size and complexity of the design.",
+  orderIntro: "Fill in what you can below. Nothing here is final - it just gives me enough to send a first estimate.",
 };
 
 /**
- * The three "In the workshop" photos on the homepage. `image: null` shows
- * generated glass artwork as a placeholder — add a real photo by dropping
- * it in /public/images/ and setting the path, e.g. "/images/workshop-1.jpg".
+ * The three "In the workshop" photos on the homepage. Edit photos by dropping
+ * them in /public/images/ and setting the path, e.g. "/images/workshop-1.jpg".
  */
 export const galleryImages: { image: string | null; caption: string; palette: number }[] = [
-  { image: "/images/workshop-1.jpg", caption: "Cutting glass on the bench", palette: 0 },
-  { image: "/images/workshop-2.jpg", caption: "A front door panel, leaded and puttied", palette: 1 },
-  { image: "/images/workshop-3.jpg", caption: "Fanlight restoration, ready to fit", palette: 3 },
+  { image: "/images/workshop-1.jpg", caption: "Hand cutting glass on the workbench", palette: 0 },
+  { image: "/images/workshop-2.jpg", caption: "Leading the panel", palette: 1 },
+  { image: "/images/workshop-3.jpg", caption: "Soldering each lead joint", palette: 3 },
 ];
 
 /** The 5-step "how it works" row at the top of the commission page. */
 export const steps = [
-  { title: "Tell us about it", desc: "Design ideas, rough measurements and how to reach you." },
-  { title: "Get an estimate", desc: "A rough price and any questions, usually within 2–3 days." },
+  { title: "Tell me about it", desc: "Design ideas, rough measurements and how to reach you." },
+  { title: "Get an estimate", desc: "A rough price and any questions, usually within 2-3 days." },
   { title: "Confirm & deposit", desc: "Agree the design and pay a deposit to secure your slot." },
-  { title: "Made by hand", desc: "Cut, painted and leaded in the workshop — typically 3–5 weeks." },
-  { title: "Fit or collect", desc: "Fitted in person, or boxed up for you to collect." },
+  { title: "Made by hand", desc: "Cut, leaded, soldered and polished in the workshop - typically 2-3 weeks." },
+  { title: "Deliver or collect", desc: "I can deliver within the south west, or you are welcome to collect from the worskop." },
 ];
 
 export type PortfolioItem = {
