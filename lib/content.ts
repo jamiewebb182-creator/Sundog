@@ -30,10 +30,10 @@ export const site = {
   contactIntro: "Based in Bristol, working on doors and windows across the South West. Whatsapp or Email is preferred.",
   email: "jamie.webb182@gmail.com",
   phone: "07752373965",
-  location: "Brislongton, Bristol, UK",
+  location: "Brislington, Bristol, UK",
   instagram: "@jamies_glass_studio",
 
-  portfolioIntro: "Every piece below is hand-cut and leaded to order - prices are a rough guide and depend on size and complexity of the design.",
+  portfolioIntro: "Every piece is hand drawn, and made to order - prices are a rough guide and depend on size and complexity of the design.",
   orderIntro: "Fill in what you can below. Nothing here is final - it just gives me enough to send a first estimate.",
 };
 
