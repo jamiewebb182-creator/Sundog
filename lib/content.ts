@@ -19,7 +19,7 @@ export const site = {
   // generated glass artwork (like the prototype); to use a real photo
   // instead, drop the file in /public/images/ and set e.g. "/images/hero.jpg".
   heroImage: "/images/hero.jpg" as string | null,
-  heroCaption: "A recent panel, held up to the light.",
+  heroCaption: "A victorian style door panel, held up to catch the light.",
 
   galleryIntro:
     "A few pieces mid-build — most panels take three to five weeks from first sketch to fitting.",
