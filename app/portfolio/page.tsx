@@ -15,9 +15,9 @@ export default function PortfolioPage() {
         <div className="pgrid">
           {portfolio.map((p) => (
             <div className="pcard" key={p.code}>
-              <div className="frame art-frame">
+              <div className={`frame art-frame${p.image ? "" : " ph-frame"}`}>
                 {p.image ? (
-                  <Image src={p.image} alt={p.title} width={600} height={480} />
+                  <Image src={p.image} alt={p.title} width={p.imageWidth} height={p.imageHeight} sizes="(max-width: 560px) 100vw, (max-width: 860px) 50vw, 33vw" />
                 ) : (
                   <GlassArt seed={p.code} palette={p.palette} cols={5} rows={4} />
                 )}
