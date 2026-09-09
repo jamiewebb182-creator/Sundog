@@ -43,9 +43,9 @@ export const site = {
  * it in /public/images/ and setting the path, e.g. "/images/workshop-1.jpg".
  */
 export const galleryImages: { image: string | null; caption: string; palette: number }[] = [
-  { image: null, caption: "Cutting glass on the bench", palette: 0 },
-  { image: null, caption: "A front door panel, leaded and puttied", palette: 1 },
-  { image: null, caption: "Fanlight restoration, ready to fit", palette: 3 },
+  { image: "/images/workshop-1.jpg", caption: "Cutting glass on the bench", palette: 0 },
+  { image: "/images/workshop-2.jpg", caption: "A front door panel, leaded and puttied", palette: 1 },
+  { image: "/images/workshop-3.jpg", caption: "Fanlight restoration, ready to fit", palette: 3 },
 ];
 
 /** The 5-step "how it works" row at the top of the commission page. */
