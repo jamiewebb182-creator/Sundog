@@ -18,8 +18,8 @@ export const site = {
   // Hero image, top right of the homepage. Leave as `null` to show the
   // generated glass artwork (like the prototype); to use a real photo
   // instead, drop the file in /public/images/ and set e.g. "/images/hero.jpg".
-  heroImage: null as string | null,
-  heroCaption: "A fanlight design, sketched for a Clifton townhouse.",
+  heroImage: "/images/hero.jpg" as string | null,
+  heroCaption: "A recent panel, held up to the light.",
 
   galleryIntro:
     "A few pieces mid-build — most panels take three to five weeks from first sketch to fitting.",
