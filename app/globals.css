@@ -194,10 +194,10 @@ fieldset legend { font-family: "Fraunces", serif; font-size: 19px; font-weight: 
 .colour-tool .txt strong { display: block; font-size: 14.5px; margin-bottom: 4px; }
 .colour-tool .txt p { font-size: 13px; color: var(--ink-soft); margin: 0; }
 
-.error-summary { background: var(--danger-soft); color: var(--danger); border-radius: var(--radius-sm); padding: 14px 16px; margin-bottom: 22px; font-size: 14px; }
+.error-summary { background: var(--danger-soft); color: var(--danger); border-radius: var(--radius-sm); padding: 14px 16px; margin-bottom: 22px; font-size: 14px; scroll-margin-top: 92px; }
 .error-summary ul { margin: 6px 0 0; padding-left: 18px; }
 
-.confirm { text-align: center; padding: 60px 20px; }
+.confirm { text-align: center; padding: 60px 20px; scroll-margin-top: 92px; }
 .confirm .mark { font-size: 38px; margin-bottom: 18px; }
 .confirm h2 { font-size: 27px; margin-bottom: 12px; }
 .confirm p { color: var(--ink-soft); max-width: 48ch; margin: 0 auto 28px; }
