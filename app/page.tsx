@@ -15,7 +15,7 @@ export default function HomePage() {
         <div className="hero-art">
           <div className="frame art-frame">
             {site.heroImage ? (
-              <Image src={site.heroImage} alt={site.heroCaption} width={800} height={600} />
+              <Image src={site.heroImage} alt={site.heroCaption} width={1000} height={1333} priority />
             ) : (
               <GlassArt seed="hero1" palette={3} cols={7} rows={5} />
             )}
