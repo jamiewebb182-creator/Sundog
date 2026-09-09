@@ -12,8 +12,8 @@
 
 export const site = {
   name: "Sundog Stained Glass",
-  tagline: "Bespoke leaded glass for Bristol's period homes.",
-  bio: "I design and hand-lead stained and coloured glass panels for Victorian and Edwardian houses across Bristol and the South West — front doors, fanlights and side-lights, built to match your home's original joinery and let real coloured light back into the hallway.",
+  tagline: "Bespoke leaded glass for Bristol’s period homes.",
+  bio: "I design and hand-lead stained and coloured glass panels for Victorian and Edwardian houses across Bristol and the South West — front doors, fanlights and side-lights, built to match your home’s original joinery and let real coloured light back into the hallway.",
 
   // Hero image, top right of the homepage. Leave as `null` to show the
   // generated glass artwork (like the prototype); to use a real photo
@@ -24,8 +24,8 @@ export const site = {
   galleryIntro:
     "A few pieces mid-build — most panels take three to five weeks from first sketch to fitting.",
 
-  portfolioBlurb: "Finished panels with rough pricing, so you've a sense of scale before we speak.",
-  orderBlurb: "Tell me about your window and I'll come back with an estimate — no need to know every detail yet.",
+  portfolioBlurb: "Finished panels with rough pricing, so you’ve a sense of scale before we speak.",
+  orderBlurb: "Tell me about your window and I’ll come back with an estimate — no need to know every detail yet.",
 
   contactIntro: "Based in Bristol, working on doors and windows across the South West. Email is best.",
   email: "hello@sundogstainedglass.co.uk",
@@ -107,8 +107,8 @@ export const portfolio: PortfolioItem[] = [
     price: "From £1,200",
     desc: "Four bespoke Victorian-style stained glass panels, with rosettes, rondels and jewels, to match the original transom window.",
     image: "/images/portfolio-003.jpg",
-    imageWidth: 497,
-    imageHeight: 800,
+    imageWidth: 557,
+    imageHeight: 790,
     palette: 1,
   },
   {
