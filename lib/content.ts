@@ -92,6 +92,16 @@ export const portfolio: PortfolioItem[] = [
     palette: 0,
   },
   {
+    code: "002",
+    title: "Victorian Transom Window Panel",
+    price: "From £360",
+    desc: "A Victorian-style panel with a central rosette and rondels, mixing traditional cathedral glass with a more modern water-pattern clear to bring in light.",
+    image: "/images/portfolio-002.jpg",
+    imageWidth: 870,
+    imageHeight: 499,
+    palette: 2,
+  },
+  {
     code: "SDG-101",
     title: "Fanlight Sunburst",
     price: "From £480",
@@ -163,17 +173,4 @@ export const orderForm = {
 
 export const orderConfig = {
   // Every enquiry always needs a portfolio piece, a photo, a drawing, OR
-  // written notes (that rule isn't a toggle — it's how the form makes sense).
-  tightRequired: true,
-  visibleRequired: true,
-  emailRequired: true,
-  phoneRequired: false,
-};
-
-/**
- * Where new-order notification emails are sent. Using your real inbox for
- * now (not the not-yet-real hello@sundogstainedglass.co.uk above) because
- * Resend can only deliver to this address until a real domain is verified —
- * see the deployment notes for how to move this to a business inbox later.
- */
-export const notifyEmail = "jamie.webb182@gmail.com";
+  // written notes (that rule isn't a toggle — it's how the
