@@ -8,7 +8,7 @@ export default function HomePage() {
     <div className="view wrap">
       <section className="block hero">
         <div>
-          <p className="eyebrow">Bristol &middot; Bespoke leaded glass</p>
+          <p className="eyebrow">Bristol &middot; Bespoke stained glass</p>
           <h1>{site.tagline}</h1>
           <p className="bio">{site.bio}</p>
         </div>
