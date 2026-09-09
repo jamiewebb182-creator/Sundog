@@ -12,8 +12,8 @@
 
 export const site = {
   name: "Sundog Stained Glass",
-  tagline: "Bespoke leaded glass for Bristol’s period homes.",
-  bio: "I design and hand-lead stained and coloured glass panels for Victorian and Edwardian houses across Bristol and the South West — front doors, fanlights and side-lights, built to match your home’s original joinery and let real coloured light back into the hallway.",
+  tagline: "Bespoke leaded stained glass for your home.",
+  bio: "I design and lead stained glass panels by hand, specialising in traditional Victorian and Edwardian styles as well as contemporary, across Bristol and the South West — front doors, transoms, and window panels built to match your home’s original style, letting coloured light shine.",
 
   // Hero image, top right of the homepage. Leave as `null` to show the
   // generated glass artwork (like the prototype); to use a real photo
