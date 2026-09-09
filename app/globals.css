@@ -153,6 +153,17 @@ section.block:last-child { margin-bottom: 0; }
    door photos and wide fanlight photos can sit together without cropping. */
 .pgrid { column-count: 3; column-gap: 22px; }
 .pcard { display: inline-block; width: 100%; break-inside: avoid; margin-bottom: 22px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-sm); }
+
+/* TEMPORARY — remove this override (and its two matching entries in the
+   media queries below) once there are 4+ portfolio pieces. With only 3
+   items, masonry's height-balancing put two of them in the same column
+   and left one empty; forcing column breaks turned out not to be
+   reliable in Chrome for a masonry grid with no fixed height. A plain
+   3-column grid sidesteps that: each item still keeps its own real
+   photo proportions (no cropping), it just sits in a fixed column
+   instead of being auto-balanced. Delete this whole rule to go back to
+   true masonry once there's enough content to balance well. */
+.pgrid { display: grid; grid-template-columns: repeat(3, 1fr); column-gap: 22px; row-gap: 22px; align-items: start; }
 .pcard .frame img { width: 100%; height: auto; object-fit: initial; }
 .pcard .frame.ph-frame { aspect-ratio: 4 / 3; }
 .pcard-body { padding: 16px 18px 18px; display: flex; flex-direction: column; gap: 6px; }
@@ -216,12 +227,12 @@ footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; g
   .gallery { grid-template-columns: 1fr 1fr; }
   .quicknav { grid-template-columns: 1fr; }
   .contact { grid-template-columns: 1fr; }
-  .pgrid { column-count: 2; }
+  .pgrid { column-count: 2; grid-template-columns: repeat(2, 1fr); } /* TEMPORARY: grid-template-columns part of the 3-item fix above */
   .grid-2 { grid-template-columns: 1fr; }
 }
 @media (max-width: 560px) {
   .gallery { grid-template-columns: 1fr; }
-  .pgrid { column-count: 1; }
+  .pgrid { column-count: 1; grid-template-columns: 1fr; } /* TEMPORARY: grid-template-columns part of the 3-item fix above */
   header .wrap { gap: 12px; }
   nav.mainnav { order: 3; width: 100%; justify-content: space-between; }
 }
