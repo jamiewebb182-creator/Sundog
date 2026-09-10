@@ -22,29 +22,15 @@
   --shadow-sm: 0 1px 1px rgba(43, 36, 32, 0.06), 0 3px 8px -4px rgba(43, 36, 32, 0.2);
   color-scheme: light;
 }
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --ground: #1c1712;
-    --surface: #24201a;
-    --surface-2: #2c2620;
-    --ink: #f2e9da;
-    --ink-soft: #cabda7;
-    --ink-faint: #93887a;
-    --line: #463c30;
-    --line-strong: #584b3b;
-    --amber: #dba653;
-    --amber-ink: #f0d9ad;
-    --amber-soft: #3d3120;
-    --sapphire: #7fa0d4;
-    --ruby: #cf7a85;
-    --emerald: #78ad91;
-    --danger: #e0897d;
-    --danger-soft: #3a251f;
-    --shadow: 0 1px 2px rgba(0, 0, 0, 0.35), 0 10px 28px -14px rgba(0, 0, 0, 0.6);
-    --shadow-sm: 0 1px 1px rgba(0, 0, 0, 0.3), 0 3px 8px -4px rgba(0, 0, 0, 0.5);
-    color-scheme: dark;
-  }
-}
+/**
+ * Dark-mode palette intentionally disabled — the site always uses the light
+ * "--root" colours above (the beige/cream look), regardless of whether a
+ * visitor's OS or browser is set to dark mode. Previously this site had a
+ * `@media (prefers-color-scheme: dark)` block here that swapped in a darker,
+ * more brown palette automatically, which is why the site could look
+ * different across devices. To bring dark mode back later, restore that
+ * block from git history.
+ */
 
 * { box-sizing: border-box; }
 [hidden] { display: none !important; }
