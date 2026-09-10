@@ -1,5 +1,5 @@
+import Image from "next/image";
 import { site, steps, portfolio } from "@/lib/content";
-import { MeasureDiagram } from "@/lib/measureDiagram";
 import { CommissionForm } from "@/components/CommissionForm";
 
 export default function CommissionPage() {
@@ -26,8 +26,22 @@ export default function CommissionPage() {
       <section className="block order-layout">
         <CommissionForm
           portfolioCodes={portfolio.map((p) => ({ code: p.code, title: p.title }))}
-          tightDiagram={<MeasureDiagram kind="tight" />}
-          visibleDiagram={<MeasureDiagram kind="visible" />}
+          tightDiagram={
+            <Image
+              src="/images/measure-tight.jpg"
+              alt="Ruler measuring the tight, outer opening of a window frame"
+              width={649}
+              height={512}
+            />
+          }
+          visibleDiagram={
+            <Image
+              src="/images/measure-visible.jpg"
+              alt="Ruler measuring the visible, inner opening of a window frame"
+              width={629}
+              height={512}
+            />
+          }
         />
       </section>
     </div>
