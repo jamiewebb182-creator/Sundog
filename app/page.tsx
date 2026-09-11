@@ -2,27 +2,18 @@ import Link from "next/link";
 import Image from "next/image";
 import { site, galleryImages } from "@/lib/content";
 import { GlassArt } from "@/lib/glassArt";
+import { Hero } from "@/components/Hero";
 
 export default function HomePage() {
   return (
     <div className="view wrap">
-      <section className="block hero">
-        <div>
-          <p className="eyebrow">Bristol &middot; Bespoke stained glass</p>
-          <h1>{site.tagline}</h1>
-          <p className="bio">{site.bio}</p>
-        </div>
-        <div className="hero-art">
-          <div className="frame art-frame">
-            {site.heroImage ? (
-              <Image src={site.heroImage} alt={site.heroCaption} width={1000} height={1333} priority />
-            ) : (
-              <GlassArt seed="hero1" palette={3} cols={7} rows={5} />
-            )}
-          </div>
-          <p className="hero-cap">{site.heroCaption}</p>
-        </div>
-      </section>
+      <Hero
+        eyebrow="Bristol · Bespoke stained glass"
+        tagline={site.tagline}
+        bio={site.bio}
+        heroImage={site.heroImage}
+        heroCaption={site.heroCaption}
+      />
 
       <section className="block quicknav">
         <div className="qcard">
@@ -71,7 +62,7 @@ export default function HomePage() {
             <li><span className="k">Phone</span><span>{site.phone}</span></li>
             <li><span className="k">Based in</span><span>{site.location}</span></li>
           </ul>
-             <Link className="social-link" href="/commission" style={{ marginTop: 20 }}>
+          <Link className="social-link" href="/commission" style={{ marginTop: 20 }}>
             <span>Get an estimate</span>
           </Link>
         </div>
@@ -81,7 +72,7 @@ export default function HomePage() {
             <p>New panels, works in progress, and the odd broken pane of glass.</p>
           </div>
           <div className="socials">
-            <a
+            
               className="social-link"
               href={`https://instagram.com/${site.instagram.replace(/^@/, "")}`}
               target="_blank"
