@@ -71,6 +71,9 @@ export default function HomePage() {
             <li><span className="k">Phone</span><span>{site.phone}</span></li>
             <li><span className="k">Based in</span><span>{site.location}</span></li>
           </ul>
+             <Link className="social-link" href="/commission" style={{ marginTop: 20 }}>
+            <span>Get an estimate</span>
+          </Link>
         </div>
         <div>
           <div className="section-head" style={{ marginBottom: 0 }}>
