@@ -216,11 +216,14 @@ footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; g
 @media (max-width: 860px) {
   .hero { grid-template-columns: 1fr; gap: 34px; }
   /* Single-column layout: the two blocks stack, so there's no text height to
-     match against — go back to a full-width, fixed-ratio, cropped image
-     (the Hero component also skips measuring below this breakpoint). */
+     match against (the Hero component also skips measuring below this
+     breakpoint) — the image just goes full width at its own natural shape. */
   .hero-art { order: -1; align-items: stretch; }
-  .hero-art .frame { width: 100%; aspect-ratio: 3 / 4; max-height: 420px; }
-  .hero-art .frame img { object-fit: cover; }
+  /* No cropping here either: aspect-ratio is explicitly cleared (it would
+     otherwise still apply from the desktop rule above) so the frame just
+     follows the photo's own real shape at full column width. */
+  .hero-art .frame { width: 100%; height: auto; aspect-ratio: unset; }
+  .hero-art .frame img { width: 100%; height: auto; object-fit: contain; }
   .gallery { grid-template-columns: 1fr 1fr; }
   .quicknav { grid-template-columns: 1fr; }
   .contact { grid-template-columns: 1fr; }
