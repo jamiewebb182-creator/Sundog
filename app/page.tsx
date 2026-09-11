@@ -72,12 +72,7 @@ export default function HomePage() {
             <p>New panels, works in progress, and the odd broken pane of glass.</p>
           </div>
           <div className="socials">
-            
-              className="social-link"
-              href={`https://instagram.com/${site.instagram.replace(/^@/, "")}`}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <a className="social-link" href={`https://instagram.com/${site.instagram.replace(/^@/, "")}`} target="_blank" rel="noopener noreferrer">
               <span>Instagram &mdash; {site.instagram}</span>
             </a>
           </div>
