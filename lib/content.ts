@@ -83,7 +83,7 @@ export const portfolio: PortfolioItem[] = [
   {
     code: "001",
     title: "Victorian Stained Glass Door Panels",
-    price: "£600 per pair",
+    price: "From £600",
     desc: "A pair of Victorian-style door panels, with a rosette and two diamond motifs, in traditional cathedral stained glass.",
     image: "/images/portfolio-001.jpg",
     imageWidth: 1000,
