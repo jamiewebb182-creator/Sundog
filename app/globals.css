@@ -55,7 +55,7 @@ h1, h2, h3, .display {
 a { color: inherit; }
 button { font: inherit; }
 img, svg { display: block; max-width: 100%; }
-.wrap { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
+.wrap { max-width: 1180px; margin: 0 auto; padding: 0 24px; } /* 24px side margin = Material Design's "medium"+ window-size-class margin */
 .eyebrow { font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--amber-ink); }
 
 header {
@@ -82,7 +82,11 @@ nav.mainnav a:hover { color: var(--ink); }
 nav.mainnav a[aria-current="page"] { background: var(--surface); color: var(--ink); box-shadow: var(--shadow-sm); }
 
 main { display: block; }
-.view { padding: 56px 0 88px; }
+/* Was `padding: 56px 0 88px`, whose shorthand implicitly set left/right to 0 —
+   at equal specificity with .wrap (declared later in this file), that 0 was
+   winning and cancelling .wrap's 24px side padding site-wide. Setting only
+   top/bottom here leaves .wrap's left/right padding uncontested. */
+.view { padding-top: 56px; padding-bottom: 88px; }
 section.block { margin: 0 0 72px; }
 section.block:last-child { margin-bottom: 0; }
 
@@ -235,4 +239,13 @@ footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; g
   .pgrid { column-count: 1; grid-template-columns: 1fr; } /* TEMPORARY: grid-template-columns part of the 3-item fix above */
   header .wrap { gap: 12px; }
   nav.mainnav { order: 3; width: 100%; justify-content: space-between; }
+}
+/* Material Design's window-size-class breakpoint between "compact" (most
+   phones) and "medium" sits at 600dp; compact recommends a 16dp side margin,
+   medium and up use 24dp (already the default above). This narrows the side
+   margin to 16px only below that threshold, so phones get the slightly
+   tighter margin Material's spec calls for while tablets/desktop keep 24px. */
+@media (max-width: 599px) {
+  .wrap { padding: 0 16px; }
+  header .wrap { padding: 14px 16px; }
 }
