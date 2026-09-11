@@ -102,11 +102,17 @@ section.block:last-child { margin-bottom: 0; }
 .art-frame img { width: 100%; height: 100%; object-fit: cover; }
 .art-frame svg { width: 100%; height: 100%; }
 
-.hero { display: grid; grid-template-columns: 1.05fr 1fr; gap: 56px; align-items: center; }
+.hero { display: grid; grid-template-columns: 1.05fr 1fr; gap: 56px; align-items: start; }
+.hero-text { display: flow-root; } /* new block-formatting context so its measured height is exact */
 .hero h1 { font-size: clamp(34px, 4.6vw, 54px); line-height: 1.05; margin: 10px 0 20px; }
 .hero .bio { color: var(--ink-soft); font-size: 17px; max-width: 46ch; margin-bottom: 0; }
-.hero-art .frame { border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); border: 1px solid var(--line); aspect-ratio: 3 / 4; max-height: 490px; margin: 0 auto; }
-.hero-art .frame img { width: 100%; height: 100%; object-fit: cover; }
+.hero-art { display: flex; flex-direction: column; align-items: center; }
+/* Desktop: height is set inline (in px) by the Hero component, which measures
+   the real rendered height of .hero-text and applies it here; width then
+   derives from that height via the photo's own 3:4 aspect-ratio, so the whole
+   image is scaled down to fit — nothing is cropped. */
+.hero-art .frame { border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); border: 1px solid var(--line); aspect-ratio: 3 / 4; width: auto; }
+.hero-art .frame img { width: 100%; height: 100%; display: block; }
 .hero-cap { margin-top: 10px; font-size: 13px; color: var(--ink-faint); text-align: center; }
 
 .section-head { margin-bottom: 28px; max-width: 64ch; }
@@ -209,7 +215,12 @@ footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; g
 
 @media (max-width: 860px) {
   .hero { grid-template-columns: 1fr; gap: 34px; }
-  .hero-art { order: -1; }
+  /* Single-column layout: the two blocks stack, so there's no text height to
+     match against — go back to a full-width, fixed-ratio, cropped image
+     (the Hero component also skips measuring below this breakpoint). */
+  .hero-art { order: -1; align-items: stretch; }
+  .hero-art .frame { width: 100%; aspect-ratio: 3 / 4; max-height: 420px; }
+  .hero-art .frame img { object-fit: cover; }
   .gallery { grid-template-columns: 1fr 1fr; }
   .quicknav { grid-template-columns: 1fr; }
   .contact { grid-template-columns: 1fr; }
