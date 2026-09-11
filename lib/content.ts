@@ -13,7 +13,7 @@
 export const site = {
   name: "Sundog Stained Glass",
   tagline: "Leaded stained glass, hand-made for your home.",
-  bio: "Hi, I'm Jamie from Sundog Stained Glass, based in Bristol. I design and build stained glass panels by hand, specialising in traditional Victorian, Edwardian, and contemporary styles, using traditional leaded techniques. I work across Bristol and the South West, creating door and window panels built to match your home's original character — letting coloured light shine through. Get in touch to discuss a commission.",
+  bio: "Hi, I'm Jamie from Sundog Stained Glass, based in Bristol. I design and build stained glass panels by hand, specialising in traditional Victorian, Edwardian, and contemporary styles, using traditional leaded techniques. I work across Bristol and the South West, creating door and window panels built to match your home's original character - letting coloured light shine through. Get in touch to discuss a commission.",
 
   // Hero image, top right of the homepage. Leave as `null` to show the
   // generated glass artwork (like the prototype); to use a real photo
