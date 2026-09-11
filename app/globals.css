@@ -244,8 +244,13 @@ footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; g
    phones) and "medium" sits at 600dp; compact recommends a 16dp side margin,
    medium and up use 24dp (already the default above). This narrows the side
    margin to 16px only below that threshold, so phones get the slightly
-   tighter margin Material's spec calls for while tablets/desktop keep 24px. */
+   tighter margin Material's spec calls for while tablets/desktop keep 24px.
+   NOTE: only padding-left/right are set here, deliberately not the `padding`
+   shorthand — a shorthand here would also set padding-top/bottom to 0 and,
+   at equal specificity, that would beat .view's top/bottom padding (the same
+   collision this whole fix started from), stripping the gap above/below the
+   content on mobile and pulling it flush against the header/footer border. */
 @media (max-width: 599px) {
-  .wrap { padding: 0 16px; }
+  .wrap { padding-left: 16px; padding-right: 16px; }
   header .wrap { padding: 14px 16px; }
 }
