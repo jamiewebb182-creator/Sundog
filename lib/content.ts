@@ -110,6 +110,36 @@ export const portfolio: PortfolioItem[] = [
     imageHeight: 790,
     palette: 1,
   },
+  {
+    code: "004",
+    title: "Victorian Transom With House Number",
+    price: "From £420",
+    desc: "Victorian-style transom window panel, with an etched house number available in any colour.",
+    image: "/images/portfolio-004.jpg",
+    imageWidth: 1200,
+    imageHeight: 498,
+    palette: 2,
+  },
+  {
+    code: "005",
+    title: "Earth & Moon Window Panel",
+    price: "From £250",
+    desc: "A traditional Victorian-style panel, commissioned as a tribute to my client’s daughters, with two roundels representing the goddesses of the earth and moon.",
+    image: "/images/portfolio-005.jpg",
+    imageWidth: 1000,
+    imageHeight: 1401,
+    palette: 3,
+  },
+  {
+    code: "006",
+    title: "Quality Street Coloured Front Door Panels",
+    price: "From £570",
+    desc: "Four Victorian-style panels for a composite front door, commissioned in Quality Street-inspired colours around a Bristol blue and white centre diamond.",
+    image: "/images/portfolio-006.jpg",
+    imageWidth: 1200,
+    imageHeight: 886,
+    palette: 0,
+  },
 ];
 
 /**
