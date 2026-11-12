@@ -120,7 +120,7 @@ section.block:last-child { margin-bottom: 0; }
 .hero-cap { margin-top: 10px; font-size: 13px; color: var(--ink-faint); text-align: center; }
 
 .section-head { margin-bottom: 28px; max-width: 64ch; }
-.section-head h2 { font-size: 28px; margin-bottom: 8px; }
+.section-head h1, .section-head h2 { font-size: 28px; margin-bottom: 8px; }
 .section-head p { color: var(--ink-soft); font-size: 15.5px; }
 
 .gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
