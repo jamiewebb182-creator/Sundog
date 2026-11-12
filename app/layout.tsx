@@ -1,11 +1,51 @@
 import type { Metadata } from "next";
 import { Header } from "@/components/Header";
-import { site } from "@/lib/content";
+import { site, seo } from "@/lib/content";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: site.name,
-  description: site.tagline,
+  metadataBase: new URL(seo.siteUrl),
+  title: {
+    default: seo.homeTitle,
+    template: `%s | ${site.name}`,
+  },
+  description: seo.homeDescription,
+  openGraph: {
+    type: "website",
+    locale: "en_GB",
+    siteName: site.name,
+    url: "/",
+    title: seo.homeTitle,
+    description: seo.homeDescription,
+  },
+  twitter: { card: "summary_large_image" },
+};
+
+// Hidden business details that help Google show the business in local
+// search and Maps results. Everything here comes from lib/content.ts.
+const businessDetails = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": `${seo.siteUrl}/#business`,
+  name: site.name,
+  description: seo.homeDescription,
+  url: seo.siteUrl,
+  image: `${seo.siteUrl}/opengraph-image.jpg`,
+  logo: `${seo.siteUrl}/icon.svg`,
+  email: site.email,
+  telephone: "+44" + site.phone.replace(/\s/g, "").replace(/^0/, ""),
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Bristol",
+    addressRegion: "Bristol",
+    addressCountry: "GB",
+  },
+  areaServed: seo.areaServed.map((name) => ({ "@type": "Place", name })),
+  knowsAbout: ["Stained glass front door panels", "Stained glass transom windows", "Leaded lights", "Victorian stained glass"],
+  sameAs: [
+    `https://instagram.com/${site.instagram.replace(/^@/, "")}`,
+    ...(seo.googleBusinessUrl ? [seo.googleBusinessUrl] : []),
+  ],
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -19,6 +59,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
       </head>
       <body>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(businessDetails) }}
+        />
         <div id="app">
           <Header />
           <main>{children}</main>
