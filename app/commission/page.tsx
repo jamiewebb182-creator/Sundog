@@ -1,6 +1,22 @@
 import Image from "next/image";
-import { site, steps, portfolio } from "@/lib/content";
+import { site, seo, steps, portfolio } from "@/lib/content";
 import { CommissionForm } from "@/components/CommissionForm";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: seo.commissionTitle,
+  description: seo.commissionDescription,
+  alternates: { canonical: "/commission" },
+  openGraph: {
+    type: "website",
+    locale: "en_GB",
+    siteName: site.name,
+    images: "/opengraph-image.jpg",
+    title: seo.commissionTitle,
+    description: seo.commissionDescription,
+    url: "/commission",
+  },
+};
 
 export default function CommissionPage() {
   return (
@@ -8,7 +24,7 @@ export default function CommissionPage() {
       <section className="block">
         <div className="order-intro">
           <div className="section-head" style={{ maxWidth: 640 }}>
-            <h2>Start a commission</h2>
+            <h1>Start a commission</h1>
             <p>{site.orderIntro}</p>
           </div>
           <div className="steps">
