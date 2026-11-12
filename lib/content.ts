@@ -62,7 +62,7 @@ export const seo = {
 
   // Paste your Google Business Profile link here (in quotes) to connect it
   // to the site, e.g. "https://g.page/r/...". Leave as null until then.
-  googleBusinessUrl: null as string | null,
+  googleBusinessUrl: "https://share.google/UAnLERu8b9wZMF1mB" as string | null,
 };
 
 /**
