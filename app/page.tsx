@@ -3,6 +3,11 @@ import Image from "next/image";
 import { site, galleryImages } from "@/lib/content";
 import { GlassArt } from "@/lib/glassArt";
 import { Hero } from "@/components/Hero";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+};
 
 export default function HomePage() {
   return (
