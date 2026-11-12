@@ -36,7 +36,9 @@ const businessDetails = {
   telephone: "+44" + site.phone.replace(/\s/g, "").replace(/^0/, ""),
   address: {
     "@type": "PostalAddress",
-    addressLocality: "Bristol",
+    streetAddress: seo.streetAddress,
+    addressLocality: seo.addressLocality,
+    postalCode: seo.postalCode,
     addressRegion: "Bristol",
     addressCountry: "GB",
   },
