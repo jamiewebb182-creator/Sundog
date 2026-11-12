@@ -38,6 +38,34 @@ export const site = {
 };
 
 /**
+ * SEARCH ENGINES (SEO) — what Google and social media previews show.
+ * Titles: aim for under about 60 characters. Descriptions: about 150.
+ * Each page title is followed automatically by " | Sundog Stained Glass".
+ */
+export const seo = {
+  siteUrl: "https://www.sundogstainedglass.co.uk",
+
+  homeTitle: "Sundog Stained Glass | Front Door Panels & Transoms, Bristol",
+  homeDescription:
+    "Handmade leaded stained glass front door panels and transom windows in Bristol and Bath. Victorian, Edwardian and contemporary designs, made to order.",
+
+  portfolioTitle: "Stained Glass Portfolio",
+  portfolioDescription:
+    "Stained glass front door panels and transom windows, handmade in Bristol for homes across Bristol and Bath - with rough prices for each piece.",
+
+  commissionTitle: "Commission a Stained Glass Panel",
+  commissionDescription:
+    "Tell me about your front door or transom window and get an estimate for a bespoke leaded stained glass panel, made by hand in Bristol.",
+
+  // Places you want to be found in (used in the hidden business details for Google).
+  areaServed: ["Bristol", "Bath"],
+
+  // Paste your Google Business Profile link here (in quotes) to connect it
+  // to the site, e.g. "https://g.page/r/...". Leave as null until then.
+  googleBusinessUrl: null as string | null,
+};
+
+/**
  * The three "In the workshop" photos on the homepage. Edit photos by dropping
  * them in /public/images/ and setting the path, e.g. "/images/workshop-1.jpg".
  */
