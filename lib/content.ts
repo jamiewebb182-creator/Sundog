@@ -63,6 +63,12 @@ export const seo = {
   // Paste your Google Business Profile link here (in quotes) to connect it
   // to the site, e.g. "https://g.page/r/...". Leave as null until then.
   googleBusinessUrl: "https://share.google/UAnLERu8b9wZMF1mB" as string | null,
+
+  // Business address, matching the Google Business Profile exactly.
+  // Only used in the hidden business details for Google, not shown on the page.
+  streetAddress: "51 Churchill Rd",
+  addressLocality: "Bristol",
+  postalCode: "BS4 3RN",
 };
 
 /**
